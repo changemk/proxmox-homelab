@@ -1,22 +1,22 @@
-# Portfolio screenshot checklist
+# Screenshots and demonstrations
 
-Add screenshots **only after sanitizing them**. There are no private screenshots included by default.
+The published videos are listed in the [Video Documentation Series](../README.md#video-documentation-series). The slots below are for future captures from the actual homelab.
 
-Suggested evidence:
+| Planned filename | Capture | Review before sharing |
+| --- | --- | --- |
+| `proxmox-dashboard.png` | Proxmox dashboard with guest status | Hide node names, VM IDs, URLs, and browser account details |
+| `debian-vm-configuration.png` | Debian VM hardware view showing 4 GB RAM and 2 vCPUs | Hide VM identifiers, storage pool names, and device addresses |
+| `docker-containers.png` | `docker ps` output showing the two services | Hide bind addresses, shell prompts, and unrelated containers |
+| `uptime-kuma-dashboard.png` | Monitor status with generic labels | Hide targets, notification settings, and internal names |
+| `tailscale-connectivity.png` | Device connectivity with generic role labels | Hide account details, tailnet names, device names, and addresses |
+| `jellyfin-media-library.png` | Empty or demo Movies and Shows view | Hide personal titles, artwork, watch history, and account details |
+| `remote-access-android.png` | Successful access over mobile data | Hide the server URL, device identifiers, and phone notifications |
 
-1. Proxmox node overview, cropping out addresses and unique device IDs.
-2. Debian VM hardware allocation showing 4 GB RAM and 2 vCPUs.
-3. `docker ps` showing healthy Uptime Kuma and Jellyfin containers (review output first).
-4. Uptime Kuma monitor overview with private names, IPs, emails, and tokens removed.
-5. Tailscale device connectivity overview with private tailnet details masked.
-6. Jellyfin's generic empty or demo library view — **do not publish copyrighted personal video files or identifiable library content without clearance**.
+## Capture and sanitization
 
-## Safety checks
+1. Capture the smallest area that proves the feature. Close unrelated tabs and hide notifications before recording.
+2. Crop or apply opaque redaction to private addresses, DNS names, device IDs, emails, usernames, and media titles. Keep screens with credentials, API tokens, Telegram chat IDs, recovery keys, and session cookies out of the capture.
+3. Export a flattened image, strip metadata, and reopen the exported file. Review it at full size and confirm redactions cannot be removed. For video, review frames, audio, and captions.
+4. Label each capture as live evidence or a demonstration using sample data. Keep original files outside the repository.
 
-- Crop or redact personal emails, public/private IPs, Tailscale addresses, user IDs and device identifiers.
-- Never show Telegram bot tokens, chat IDs, password prompts or recovery codes.
-- Screenshots can embed metadata; strip EXIF before publishing.
-- Use sample or synthetic data if a screenshot risks revealing private details.
-- Public screenshots should be clearly described as actual evidence or representative illustrations.
-
-`.gitignore` excludes common image extensions by default. If you intentionally add a reviewed image, use `git add -f screenshots/<SAFE_IMAGE_NAME>.png` after verifying it contains no private details.
+Common image extensions are ignored by default. Stage an approved capture with `git add -f -- screenshots/<SAFE_IMAGE_NAME>.png` and inspect the staged file list before committing. See the [security policy](../SECURITY.md) for the publication review.

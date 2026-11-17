@@ -36,7 +36,7 @@ A green TCP port status **does not** confirm every aspect of the underlying serv
 5. Send a test message; confirm receipt on the phone.
 6. Save the notification and enable it on desired monitors.
 
-**Incident from this build:** An initial Telegram test returned **HTTP 400 Bad Request**; the test succeeded after checking chat initialization and the Chat ID. See [troubleshooting](09-troubleshooting.md).
+**Incident from this build:** An initial Telegram test returned **HTTP 400 Bad Request**; delivery succeeded after checking chat initialization and the chat ID and correcting the notification configuration. The exact configuration fault was unconfirmed. See [troubleshooting](09-troubleshooting.md).
 
 Never publish the bot token or a screenshot containing it. If leaked, rotate it through BotFather.
 
