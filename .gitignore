@@ -1,0 +1,61 @@
+# Local tooling and infrastructure exports
+.agents/
+.aws/
+.codex/
+.ssh/
+*.tfstate*
+*.ovpn
+*.qcow2
+*.vma*
+*.tar*
+*.zip
+*.bak
+
+# Sensitive configuration, credentials, and keys
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+*.kdbx
+id_rsa*
+id_ed25519*
+*token*
+*secret*
+credentials*
+
+# Local Docker state and persistent data
+docker/**/config/
+docker/**/cache/
+docker/**/data/
+docker/**/media/
+docker/**/library/
+docker/**/postgres/
+**/db.sqlite*
+*.db
+*.sqlite
+*.sqlite3
+*.log
+
+# Personal content and exports
+media/
+backups/
+exports/
+*.mp4
+*.mkv
+*.avi
+*.mov
+*.jpg
+*.jpeg
+*.png
+*.webp
+*.pdf
+
+# IDE / OS
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+__pycache__/

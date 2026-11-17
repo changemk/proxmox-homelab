@@ -1,0 +1,15 @@
+# Sanitized example of the deployed Jellyfin service.
+# Confirm UID/GID with `id -u` and `id -g` on the Debian host.
+# `latest` matches the original project but pin a version for reproducibility.
+services:
+  jellyfin:
+    image: jellyfin/jellyfin:latest
+    container_name: jellyfin
+    user: "1000:1000" # change if your user's UID/GID differ
+    restart: unless-stopped
+    ports:
+      - "${HOMELAB_BIND_IP:?Set HOMELAB_BIND_IP to a trusted interface address}:8096:8096"
+    volumes:
+      - ./config:/config
+      - ./cache:/cache
+      - ./media:/media:ro

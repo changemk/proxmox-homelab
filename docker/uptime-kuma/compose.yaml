@@ -1,0 +1,14 @@
+# Sanitized example of the deployed Uptime Kuma v2 service.
+# Review and back up the named volume before any major upgrade.
+services:
+  uptime-kuma:
+    image: louislam/uptime-kuma:2
+    container_name: uptime-kuma
+    restart: unless-stopped
+    ports:
+      - "${HOMELAB_BIND_IP:?Set HOMELAB_BIND_IP to a trusted interface address}:3001:3001"
+    volumes:
+      - uptime-kuma-data:/app/data
+
+volumes:
+  uptime-kuma-data:
